@@ -1,12 +1,12 @@
-#关于PUB-blog
+# 关于PUE-blog
 
 ## PUB
 - P(private) ：私有的；
 - U( unique )：独特的；
-- B(editable)：可编辑的；
+- E(editable)：可编辑的；
 
-##特点
-- 如PUB
+## 特点
+- 如PUE
 - 包含前端展示页面和后台管理页面
 - markdown格式编写，动态前端页面展示
 
