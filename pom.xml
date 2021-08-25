@@ -7,14 +7,162 @@
     <groupId>top.lemenk.project</groupId>
     <artifactId>PUE-blog</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>${version}</version>
     <modules>
         <module>blog-common</module>
+        <module>blog-web</module>
+        <module>blog-service</module>
+        <module>blog-db</module>
+        <module>blog-pojo</module>
     </modules>
 
+    <!--统一管理jar包版本-->
     <properties>
+        <version>1.0-SNAPSHOT</version>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <junit.version>4.12</junit.version>
+        <log4j.version>1.2.17</log4j.version>
+        <mysql.version>5.1.47</mysql.version>
+        <druid.version>1.1.16</druid.version>
+        <lombok.version>1.18.10</lombok.version>
+        <mybatis.spring.boot.version>1.3.0</mybatis.spring.boot.version>
+        <swagger.version>2.9.2</swagger.version>
+        <hutool.version>5.7.9</hutool.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--自身版本管理-->
+            <dependency>
+                <groupId>top.lemenk.project</groupId>
+                <artifactId>blog-common</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>top.lemenk.project</groupId>
+                <artifactId>blog-pojo</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>top.lemenk.project</groupId>
+                <artifactId>blog-db</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>top.lemenk.project</groupId>
+                <artifactId>blog-service</artifactId>
+                <version>${version}</version>
+            </dependency>
+
+            <!--spring boot 相关-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.2.2.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--spring cloud Hoxton.SR1-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Hoxton.SR1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--spring cloud alibaba-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2.1.0.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+
+            <!-- druid-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <!--mybatis-->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.spring.boot.version}</version>
+            </dependency>
+
+            <!--junit-->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+            <!--log4j-->
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+
+            <!--util-->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.9</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <optional>true</optional>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>4.4</version>
+            </dependency>
+
+            <!--将markdown形式转成html格式的依赖-->
+            <dependency>
+                <groupId>org.pegdown</groupId>
+                <artifactId>pegdown</artifactId>
+                <version>1.6.0</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
 
 </project>

@@ -1,6 +1,6 @@
 # 关于PUE-blog
 
-## PUB
+## PUE
 - P(private) ：私有的；
 - U( unique )：独特的；
 - E(editable)：可编辑的；
